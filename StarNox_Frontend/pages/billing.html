@@ -1,0 +1,32 @@
+<div class="page">
+
+    <div class="top-bar">
+        <button class="back-btn" onclick="loadPage('home')">←</button>
+        <div class="title">Billing</div>
+    </div>
+    <!-- 🔹 STEP–6.4 : Customer Name input -->
+    <div class="section">
+        <div><strong>Previous Due:</strong> ₹0</div>
+        <label>Customer Name</label>
+        <input class="NameBox" type="text" placeholder="Optional" oninput="billState.customerName=this.value">
+    </div>
+
+    <!-- Quick Amount Input -->
+    <div class="section">
+        <label><strong>Enter Amount:</strong></label>
+        <input type="number" placeholder="₹ Amount" oninput="updateSale(this.value)">
+
+    </div>
+    <!-- Item-wise Section -->
+    <div class="section" id="itemSection" style="display: none;">
+        <div class="item" onclick="addItem(50)">+ Potato ₹50</div>
+        <div class="item" onclick="addItem(120)">+ Oil ₹120</div>
+    </div>
+
+    <!-- Review Button -->
+    <div class="section">
+        <button class="primary-btn" onclick="loadPage('preview')">
+            Review Bill
+        </button>
+
+    </div>
