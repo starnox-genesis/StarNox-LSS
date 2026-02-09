@@ -1,0 +1,31 @@
+<div class="page">
+    <div class="home-grid">
+
+        <button class="card" onclick="loadPage('billing')">
+            🛒<br><b>New Sale</b>
+        </button>
+
+        <button class="card" onclick="loadPage('khata')">
+            📒<br><b>Khata</b>
+        </button>
+
+        <button class="card" onclick="loadTodaySummary()">
+            📊<br><b>Today</b>
+            <div class="stats">
+                Total: ₹<strong id="todaySale">0</strong><br>
+                Received: ₹<strong id="todayReceived">0</strong><br>
+                New Due: ₹<strong id="todayDue">0</strong>
+            </div>
+        </button>
+
+
+        <button class="card" onclick="loadPage('history')">
+            📜<br><b>History</b>
+        </button>
+
+        <button onclick="testToday()">
+            TEST BACKEND
+        </button>
+
+    </div>
+</div>
