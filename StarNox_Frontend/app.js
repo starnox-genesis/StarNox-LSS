@@ -1,3 +1,7 @@
+
+// ⚠️ এখানে তোমার GitHub repo নাম exactly বসাবে
+const BASE_PATH = "/StarNox-LSS/StarNox_Frontend";
+
 const API_URL = "https://script.google.com/macros/s/AKfycbxRtVhbcjM06_nDU4eU3YeRKwyfiudFyFNCy4ELNnfwh3G39ycdJ7hucVisfo7JZRgKvQ/exec";
 const API_KEY = "STARNOX123";
 
@@ -50,8 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* ===== Page Loader ===== */
 function loadPage(page) {
-    fetch(`pages/${page}.html`)
-        .then(res => res.text())
+    fetch(`${BASE_PATH}/pages/${page}.html`)
+        .then(res => {
+            if (!res.ok) throw new Error("Page not found");
+            return res.text();
+        })
         .then(html => {
             document.getElementById("app").innerHTML = html;
 
@@ -61,6 +68,7 @@ function loadPage(page) {
             if (page === "khata") loadKhata();
             if (page === "history") loadHistory();
         });
+    .catch(err => console.error("Page load error"));
 }
 
 
