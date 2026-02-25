@@ -1,0 +1,126 @@
+:root{
+  --brand:#2f6fb2;
+  --brand2:#2563eb;
+  --bg1:#f1f5f9;
+  --bg2:#e6edf5;
+  --radius:16px;
+    --red:#dc2626;
+  --green:#16a34a;
+}
+
+*{box-sizing:border-box;font-family:system-ui,Segoe UI,Roboto}
+
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg1),var(--bg2));
+}
+
+.app{
+  max-width:420px;
+  margin:auto;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+
+  background: linear-gradient(to right, #ffffff, #fafafa);
+
+  box-shadow: 
+    0 4px 16px rgba(0,0,0,0.08);
+
+  backdrop-filter: blur(6px);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Back icon */
+.back {
+  font-size: 22px;
+  cursor: pointer;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back:hover {
+  background: #f2f2f2;
+  border-radius: 50%;
+}
+
+
+.body{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:20px;
+}
+
+.amount-wrap{
+  display:flex;
+  border-radius:14px;
+  overflow:hidden;
+  border:2px solid #c7d7ea;
+  background:white;
+  box-shadow:0 6px 16px rgba(0,0,0,.08);
+}
+
+.amount-icon{
+  background:linear-gradient(135deg,#3b82f6,#1d4ed8);
+  color:white;
+  padding:14px 16px;
+  font-size:20px;
+  display:flex;
+  align-items:center;
+}
+
+.amount-wrap input{
+  flex:1;
+  border:none;
+  outline:none;
+  padding:16px;
+  font-size:18px;
+}
+
+.btn{
+  margin-top:18px;
+  padding:16px;
+  border:none;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:700;
+  color:white;
+  cursor:pointer;
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+  box-shadow:0 10px 22px rgba(37,99,235,.35);
+}
+
+.status{
+  text-align:center;
+  margin-top:12px;
+  font-weight:800;
+}
+.status.error{color:var(--red)}
+.status.success{color:var(--green)}

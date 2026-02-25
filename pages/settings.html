@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings</title>
+
+<link rel="stylesheet" href="../css/settings.css">
+</head>
+
+<body data-page="settings">
+
+<div class="app">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="left">
+      <div class="back" onclick="goBack()">←</div>
+      Settings
+    </div>
+    <div class="icon" onclick="openFilter()">☰</div>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+    <div id="loader" class="loader"></div>
+
+    <div class="section-title">Shop Profile</div>
+
+    <div class="card">
+
+      <div class="field">
+        <div class="label">Shop Name</div>
+        <div class="value" id="shopName">...</div>
+      </div>
+
+      <div class="field">
+        <div class="label">Owner Name</div>
+        <div class="value" id="ownerName">...</div>
+      </div>
+
+      <div class="field">
+        <div class="label">Shop ID</div>
+        <div class="value" id="shopId">...</div>
+      </div>
+
+      <div class="field">
+        <div class="label">Mobile Number</div>
+        <div class="value" id="shopMobile">...</div>
+      </div>
+
+    </div>
+
+    <div class="strip"></div>
+
+    <button class="btn btn-neutral" onclick="changePassword()">
+      Change Password
+    </button>
+
+    <button class="btn btn-logout" onclick="logout()">
+      Logout
+    </button>
+
+    <div class="strip"></div>
+
+    <div class="footer">
+      App Version: v1.1
+    </div>
+
+  </div>
+
+</div>
+
+<script type="module" src="../js/script.js"></script>
+
+</body>
+</html>

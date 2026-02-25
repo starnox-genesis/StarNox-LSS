@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Receive Payment</title>
+
+<link rel="stylesheet" href="../css/receive-payment.css">
+</head>
+
+<body data-page="receive-payment">
+
+<div class="app">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="back" onclick="goBack()">←</div>
+    Receive Payment
+  </div>
+
+  <div class="body">
+
+    <!-- Customer -->
+    <div class="row">
+      <div class="name" id="custName">...</div>
+      <div class="pending">₹<span id="headerDue">...</span> Due</div>
+    </div>
+
+    <!-- Amount -->
+    <div class="amount-wrap">
+      <div class="rs">₹</div>
+      <input id="amt" class="amount-input" type="number" placeholder="0">
+    </div>
+
+    <div class="remaining">
+      Remaining balance: ₹<span id="remain">0</span>
+    </div>
+
+    <!-- Payment Mode -->
+    <div class="pm-title">Payment mode</div>
+
+    <div class="pm-row">
+      <button class="pm active" onclick="setMode(this,'Cash')">Cash</button>
+      <button class="pm" onclick="setMode(this,'UPI')">UPI</button>
+      <button class="pm" onclick="setMode(this,'Bank')">Bank</button>
+    </div>
+
+    <button class="btn" onclick="confirmPayment()">
+      Confirm Payment
+    </button>
+
+    <div id="status" class="status"></div>
+
+  </div>
+
+</div>
+
+<script type="module" src="../js/script.js"></script>
+
+</body>
+</html>

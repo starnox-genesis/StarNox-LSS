@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>StarNox LSS</title>
+</head>
+
+<body>
+
+    <script>
+        if (localStorage.getItem("authToken")) {
+            location.href = "pages/home.html";
+        } else {
+            location.href = "pages/login.html";
+        }
+    </script>
+
+
+</body>
+
+</html>

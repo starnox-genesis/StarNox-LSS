@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create Account</title>
+
+<link rel="stylesheet" href="../css/signup.css">
+</head>
+
+<body data-page="signup">
+
+<div class="app">
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="back" onclick="goBack()">←</div>
+    StarNox LSS
+  </div>
+
+  <div class="body">
+
+    <div class="title">Create Account</div>
+
+    <input id="shop" class="input" placeholder="Shop Name">
+    <input id="owner" class="input" placeholder="Owner Name">
+    <input id="mobile" class="input" placeholder="Mobile Number" maxlength="10">
+    <input id="pass" class="input" type="password" placeholder="Password">
+    <input id="cpass" class="input" type="password" placeholder="Confirm Password">
+
+    <button class="btn" onclick="signupBtn()">Create Account</button>
+
+    <div id="status" class="status"></div>
+
+    <div class="link">
+      Already have an account?
+      <a href="#" onclick="goLogin()">Sign In</a>
+    </div>
+
+  </div>
+
+</div>
+
+<script type="module" src="../js/script.js"></script>
+
+</body>
+</html>
