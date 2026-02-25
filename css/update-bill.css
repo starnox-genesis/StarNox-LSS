@@ -1,0 +1,96 @@
+:root{
+  --brand:#3b6fa8;
+  --bg:#f3f5f8;
+  --pill:#e9edf2;
+  --danger:#b91c1c;
+  --radius:22px;
+}
+
+*{box-sizing:border-box;font-family:system-ui,Segoe UI,Roboto}
+body{margin:0;background:var(--bg);}
+
+.app{
+  max-width:420px;
+  margin:auto;
+  min-height:100vh;
+}
+
+.topbar{
+  padding:14px 16px;
+  display:flex;
+  gap:12px;
+  background:white;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  font-weight:600;
+}
+
+.back{cursor:pointer}
+
+.body{
+  padding:16px 18px;
+}
+
+.customer-row{
+  display:flex;
+  justify-content:space-between;
+}
+
+.cust-name{
+  font-size:18px;
+  font-weight:700;
+}
+
+.due-badge{
+  color:var(--danger);
+  font-weight:700;
+}
+
+.prev-due{
+  margin-bottom:14px;
+  font-size:14px;
+}
+
+.input{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:var(--radius);
+  background:var(--pill);
+  margin-bottom:14px;
+}
+
+.remaining span{
+  color:var(--danger);
+  font-weight:700;
+}
+
+.btn{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:var(--radius);
+  color:white;
+  font-weight:700;
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+}
+
+.status{
+  text-align:center;
+  margin-top:10px;
+}
+
+.due-box{
+  margin:14px 0 18px;
+  padding:14px;
+  border-radius:14px;
+  background:#f8fafc;
+  border:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+}
+
+.due-amount{
+  font-size:20px;
+  font-weight:800;
+  color:#dc2626;
+}

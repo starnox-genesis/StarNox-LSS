@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Update Bill</title>
+
+    <link rel="stylesheet" href="../css/update-bill.css">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#2f6fb2">
+</head>
+
+<body data-page="update-bill">
+
+    <div class="app">
+
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="back" onclick="goBack()">←</div>
+            Update Bill
+        </div>
+
+        <div class="body">
+
+            <!-- Customer -->
+            <div class="customer-row">
+                <div class="cust-name" id="custName">Name...</div>
+                <div class="due-badge">₹<span id="headerDue">0</span> Due</div>
+            </div>
+
+            <div class="prev-due">
+                Previous Due: ₹<span id="prevDueText">0</span>
+            </div>
+
+            <!-- Inputs -->
+            <input id="sale" class="input" placeholder="Sale Amount">
+            <input id="received" class="input" placeholder="Amount Received">
+
+            <!-- Remaining -->
+            <div class="due-box">
+                <div class="due-label">Remaining Due</div>
+                <div class="due-amount">₹ <span id="remain">0</span></div>
+            </div>
+
+            <button class="btn" onclick="confirmUpdate()">
+                Confirm Update
+            </button>
+
+            <div id="status" class="status"></div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="../js/script.js"></script>
+
+</body>
+
+</html>
