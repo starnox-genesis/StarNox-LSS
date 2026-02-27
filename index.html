@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>StarNox LSS</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2f6fb2">
+</head>
+
+<body>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js")
+                .then(() => {
+                    console.log("SW Registered");
+                    startApp();
+                })
+                .catch(err => {
+                    console.log("SW Error:", err);
+                    startApp();
+                });
+        } else {
+            startApp();
+        }
+
+        function startApp() {
+            if (localStorage.getItem("authToken")) {
+                location.href = "pages/home.html";
+            } else {
+                location.href = "pages/login.html";
+            }
+        }
+    </script>
+    <script>
+        let deferredPrompt;
+
+        window.addEventListener("beforeinstallprompt", (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+
+            // Custom Install Button Show করবো
+            const installBtn = document.createElement("button");
+            installBtn.innerText = "Install StarNox";
+            installBtn.id = "installBtn";
+            installBtn.style.position = "fixed";
+            installBtn.style.bottom = "20px";
+            installBtn.style.right = "20px";
+            installBtn.style.padding = "10px 15px";
+            installBtn.style.background = "#2f6fb2";
+            installBtn.style.color = "white";
+            installBtn.style.border = "none";
+            installBtn.style.borderRadius = "8px";
+            installBtn.style.cursor = "pointer";
+            installBtn.style.zIndex = "9999";
+
+            document.body.appendChild(installBtn);
+
+            installBtn.addEventListener("click", async () => {
+                installBtn.remove();
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log("Install outcome:", outcome);
+                deferredPrompt = null;
+            });
+        });
+
+        window.addEventListener("appinstalled", () => {
+            console.log("StarNox Installed Successfully");
+        });
+    </script>
+</body>
+
+</html>
