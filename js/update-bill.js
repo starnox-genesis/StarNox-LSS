@@ -16,9 +16,11 @@ if (!data) {
     previousDue = Number(data.due) || 0;
 
     document.getElementById("custName").textContent = data.name;
+    document.getElementById("lastUpdateTime").textContent = data.lastUpdateTime;
+    console.log("Loaded Customer for Update:", data);
 
     const headerDueEl = document.getElementById("headerDue");
-    const prevDueEl = document.getElementById("prevDueText");
+
     
 
     if (previousDue < 0) {
