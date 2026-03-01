@@ -99,12 +99,12 @@ function renderKhata(list) {
 
         <div class="khata-actions">
             <button class="btn-outline"
-                onclick="goUpdate('${data.id}', '${data.name}', ${data.due})">
+                onclick="goUpdate('${data.id}', '${data.name}', '${data.due}', '${lastUpdateTime}')">
                 Update
             </button>
 
             <button class="btn-outline"
-                onclick="payCustomer('${data.id}', '${data.name}', ${data.due})">
+                onclick="payCustomer('${data.id}', '${data.name}', '${data.due}', '${lastUpdateTime}')">
                 Payment
             </button>
         </div>
@@ -117,26 +117,29 @@ function renderKhata(list) {
 
 loadKhata();
 
-window.goUpdate = function(id, name, due) {
+window.goUpdate = function(id, name, due, lastUpdateTime) {
 
     localStorage.setItem("updateCustomer", JSON.stringify({
         id: id,      // ✅ এখন ID save হচ্ছে
         name: name,
-        due: due
-        // shopId: localStorage.getItem("shopId")
+        due: due,
+        lastUpdateTime: lastUpdateTime,
+        
+        shopId: localStorage.getItem("shopId")
     }));
 
     location.href = "update-bill.html";
 };
 
 
-window.payCustomer = function (id, name, due) {
+window.payCustomer = function (id, name, due, lastUpdateTime) {
 
     // customer data save
     localStorage.setItem("payCustomer", JSON.stringify({
         id: id,
         name: name,
         due: due,
+        lastUpdateTime: lastUpdateTime,
         shopId: localStorage.getItem("shopId")
     }));
 
