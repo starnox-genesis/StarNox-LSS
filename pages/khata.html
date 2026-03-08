@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../css/khata.css">
   <link rel="manifest" href="../manifest.json">
   <meta name="theme-color" content="#2f6fb2">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body data-page="khata">
@@ -16,25 +17,49 @@
   <div class="app">
 
     <!-- Top Bar -->
-    <div class="topbar">
-      <div class="left">
-        <div class="back" onclick="goBack()">←</div>
-        Khata List
+    <div class="header">
+
+
+      <div class="toprow">
+
+        <div class="back" onclick="goBack()" type="button">← </div>
+        <div class="title"> Khata List</div>
+
+        <div class="icons">
+          ⋮
+        </div>
       </div>
-      <div class="icon" onclick="openFilter()">☰</div>
+
+      <div class="khata-search">
+        <span class="material-icons">search</span>
+        <input type="text" placeholder="Search customer name or phone" id="searchInput" oninput="searchKhataList()">
+      </div>
+
+      <div class="chips">
+        <button class="chip" onclick="filterKhata('all')">All</button>
+        <button class="chip" onclick="filterKhata('due')">Due</button>
+        <button class="chip" onclick="filterKhata('advance')">Advance</button>
+        <button class="chip" onclick="filterKhata('settled')">Settled</button>
+      </div>
+
     </div>
+
+    <div class="divider"></div>
 
     <!-- List -->
     <div class="body">
+
       <div id="loader" class="loader">Loading...</div>
-      <div id="khataList"></div>
+      <div id="khataList" class="khata-list"></div>
     </div>
 
 
   </div>
 
   <!-- Floating Add -->
-  <button class="fab" onclick="addCustomer()">+</button>
+  <button class="floating-button" onclick="addCustomer()">+</button>
+
+  <div class="khata-container" id="khataContainer"></div>
 
   <!-- Main loader -->
   <script type="module" src="../js/script.js"></script>
