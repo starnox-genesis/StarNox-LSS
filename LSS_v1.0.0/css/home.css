@@ -1,0 +1,203 @@
+:root{
+  --primary:#e60000;      /* airtel red */
+  --accent:#2f6fb2;       /* blue highlight */
+
+  --bg:#eef2f7;          /* soft background */
+  --card:#ffffffcf;
+
+  --text:#1f2937;
+  --muted:#6b7280;
+
+  --success:#16a34a;
+  --danger:#dc2626;
+
+  --radius:16px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, Segoe UI, Roboto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+}
+
+/* ===== APP SHELL ===== */
+
+.app {
+  max-width: 420px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #eef2f7;
+}
+
+
+.body {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+
+/* ===== TOP BAR ===== */
+
+.topbar {
+    /* background: var(--card); */
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.top-icons {
+    display: flex;
+    gap: 14px;
+    font-size: 18px;
+    color: #374151;
+}
+
+.icon-btn {
+    cursor: pointer;
+    /* font-size: 90px; */
+}
+
+/* ===== BODY ===== */
+
+
+
+/* ===== SUMMARY CARD ===== */
+
+.summary {
+    background: var(--card);
+    /* border-radius: var(--radius); */
+    padding: 16px;
+    /* box-shadow: 0 8px 20px rgba(0, 0, 0, .08); */
+    margin-bottom: 24px;
+    /* margin-bottom:20px; */
+    /* background: var(--card); */
+    border-radius:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+
+.sum-title {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: .5px;
+}
+
+.sum-total {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--accent);
+    margin: 6px 0 12px;
+    /* color:#2563eb;   blue highlight like Airtel */
+}
+
+.sum-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    text-align: center;
+}
+
+.sum-box {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 10px 6px;
+    font-size: 13px;
+}
+
+.sum-box .label {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.sum-box.total b {
+    color: #1f2937;
+}
+
+.sum-box.cash b {
+    color: var(--success);
+}
+
+.sum-box.due b {
+    color: var(--danger);
+}
+
+/* ===== GRID TILES ===== */
+
+
+
+.tile {
+    /* background: white; */
+    /* border-radius: var(--radius); */
+    padding: 18px 12px;
+    text-align: center;
+    /* box-shadow: 0 6px 18px rgba(0, 0, 0, .08); */
+    cursor: pointer;
+    /* transition: .15s; */
+    transition: transform .15s, box-shadow .15s;
+    background:#ffffffcf;
+    border-radius:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+
+.tile:active {
+    transform: translateY(1px);
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
+
+.tile-ico {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.tile-label {
+    font-weight: 600;
+    color: #374151;
+}
+
+/* ===== BOTTOM NAV ===== */
+
+.nav {
+    background: var(--bg);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, .08);
+    position: sticky;
+    bottom: 0;
+}
+
+.nav button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.nav button.active {
+    
+    color: var(--primary);
+}

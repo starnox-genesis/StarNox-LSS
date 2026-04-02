@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quick Sale</title>
+
+<link rel="stylesheet" href="../css/quick-sale.css">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#2f6fb2">
+</head>
+
+<body data-page="quick-sale">
+
+<div class="app">
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="left">
+      <div class="back" onclick="goBack()">←</div>
+      Quick Sale
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="body">
+
+    <div class="amount-wrap">
+      <div class="amount-icon">₹</div>
+      <input id="amount" placeholder="Enter Amount" inputmode="decimal">
+    </div>
+
+    <!-- Payment Mode -->
+    <!-- <div class="pm-title">Payment mode</div> -->
+
+    <div class="pm-row">
+      <button class="pm active" onclick="setMode(this,'Cash')">Cash</button>
+      <button class="pm" onclick="setMode(this,'UPI')">UPI</button>
+      <button class="pm" onclick="setMode(this,'Bank')">Bank</button>
+    </div>
+
+    <button class="btn" onclick="quickSaleConfirm()">
+      Confirm Sale
+    </button>
+
+    <div id="status" class="status"></div>
+
+  </div>
+
+</div>
+
+<!-- Main loader -->
+<script type="module" src="../js/script.js"></script>
+
+</body>
+</html>

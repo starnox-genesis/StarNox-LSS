@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home - StarNox LSS</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#2f6fb2">
+</head>
+
+<body data-page="home">
+
+    <div class="app">
+
+        <!-- TOP BAR -->
+        <div class="topbar">
+            <div class="brand">StarNox LSS</div>
+
+            <div class="top-icons">
+                <span class="icon-btn">🔍</span>
+                <span class="icon-btn">🔔</span>
+                <span class="icon-btn">👤</span>
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="body">
+
+            <!-- SUMMARY -->
+            <div class="summary">
+                <div class="sum-title">TODAY SUMMARY</div>
+                <div class="sum-total">TOTAL: ₹<span id="sumTotal">0</span></div>
+
+                <div class="sum-grid">
+                    <div class="sum-box total">
+                        <div class="label">Today Sale</div>
+                        <b>₹<span id="boxTotal">0</span></b>
+                    </div>
+
+                    <div class="sum-box cash">
+                        <div class="label">Today Collection</div>
+                        <b>₹<span id="boxCash">0</span></b>
+                    </div>
+
+                    <div class="sum-box due">
+                        <div class="label">Today Due</div>
+                        <b>₹<span id="boxDue">0</span></b>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRID -->
+            <div class="grid">
+
+                <div class="tile" onclick="goQuickSale()" type="button">
+                    <div class="tile-ico">🧾</div>
+                    <div class="tile-label" >Quick Sale</div>
+                </div>
+
+                <div class="tile" onclick="goKhata()">
+                    <div class="tile-ico">📖</div>
+                    <div class="tile-label">Khata</div>
+                </div>
+
+                <div class="tile" onclick="goHistory()">
+                    <div class="tile-ico">🕘</div>
+                    <div class="tile-label">History</div>
+                </div>
+
+                <div class="tile" onclick="goReports()">
+                    <div class="tile-ico">📊</div>
+                    <div class="tile-label">Reports</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOTTOM NAV -->
+        <div class="nav">
+            <button class="active">🏠</button>
+            <button onclick="goReports()">📊</button>
+            <button onclick="goSettings()">👤</button>
+        </div>
+
+    </div>
+
+    <!-- Main JS (module) -->
+    <script type="module" src="../js/script.js"></script>
+
+</body>
+
+</html>

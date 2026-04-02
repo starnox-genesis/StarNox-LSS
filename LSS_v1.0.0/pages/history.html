@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Sales History</title>
+
+    <link rel="stylesheet" href="../css/history.css">
+    <link rel="manifest" href="../manifest.json">
+
+    <meta name="theme-color" content="#2f6fb2">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+</head>
+
+<body data-page="history">
+
+    <div class="app">
+
+        <!-- Top Bar -->
+        <div class="header">
+
+
+            <div class="toprow">
+
+                <div class="back" onclick="goBack()" type="button">← </div>
+                <div class="title"> Sales History</div>
+
+                <div class="icons">
+                    ⋮
+                </div>
+            </div>
+
+            <div class="khata-search">
+                <span class="search-icon">
+                    <svg viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5
+                            6.5 6.5 0 1 0 9.5 16
+                            6.471 6.471 0 0 0 13.73 14.43l.27.28v.79l5
+                            5 1.49-1.49-5-5zM9.5 14C7.01 14 5
+                            11.99 5 9.5S7.01 5 9.5 5
+                            14 7.01 14 9.5
+                            11.99 14 9.5 14z" />
+                    </svg>
+                </span>
+                <input type="text" placeholder="Search customer name or phone" id="searchInput"
+                    oninput="searchHistoryList()">
+            </div>
+
+            <div class="chips">
+                <button class="chip active" onclick="filterKhata('all')">All</button>
+                <button class="chip" onclick="filterKhata('due')">Due</button>
+                <button class="chip" onclick="filterKhata('advance')">Advance</button>
+                <button class="chip" onclick="filterKhata('settled')">Settled</button>
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+        <!-- Loader -->
+
+        <div id="loader">
+
+            <div class="khata-card skeleton"></div>
+            <div class="khata-card skeleton"></div>
+            <div class="khata-card skeleton"></div>
+
+        </div>
+
+
+        <!-- History List -->
+
+        <div id="historyList" class="history-list"></div>
+
+    </div>
+
+    <script type="module" src="../js/script.js"></script>
+
+</body>
+
+</html>
