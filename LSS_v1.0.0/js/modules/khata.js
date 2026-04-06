@@ -52,22 +52,36 @@ function updateKhataUI(data) {
     const loader = document.getElementById("loader");
     if (loader) loader.style.display = "none";
 
-    // 🔥 FIX: calculate totalDue
-    let totalDue = data.reduce((sum, c) => sum + (Number(c.due) || 0), 0);
+    const totalDue = data.reduce((sum, c) => sum + (Number(c.due) || 0), 0);
 
-    document.getElementById("totalDue").textContent =
-        totalDue.toLocaleString("en-IN");
+    let dueText = "";
+    let dueColor = "";
 
+    if (totalDue < 0) {
+        dueText = "₹ " + Math.abs(totalDue).toLocaleString("en-IN") + " Advance";
+        dueColor = "green";
+    } 
+    else if (totalDue > 0) {
+        dueText = "₹ " + totalDue.toLocaleString("en-IN") + " Due";
+        dueColor = "red";
+    } 
+    else {
+        dueText = "₹ 0 Settled";
+        dueColor = "gray";
+    }
 
-        console.log("Loaded Khata from Cache:", data);
+    const el = document.getElementById("totalDue");
+
+    el.textContent = dueText;   // ✅ FIX
+    el.style.color = dueColor; // ✅ FIX
+
+    console.log("Loaded Khata from Cache:", data);
 
     allCustomers = data;
     activeCustomers = data;
 
     renderKhata(data);
-
 }
-
 /**Step 2 — API Call with Cache Update */
 // loadKhata Function
 function loadKhata() {
