@@ -1,5 +1,5 @@
 // ===== Global Config =====
-window.API_URL = "https://script.google.com/macros/s/AKfycbwxcummdWc9Eg83LvmcdynbPNx7H_IBxdfhkUCKvNm4njbAVsmFulX7cVc_FaMQwxIBEA/exec";
+window.API_URL = "https://script.google.com/macros/s/AKfycbyYBMjUIYROjNMtQVNopj2nDhoI_tMCOqAi29kjfH9PqGL9supSPA2j_8jW_v451X5_/exec";
 
 window.SECRET_KEY = "STARNOX123";
 
