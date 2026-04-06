@@ -32,7 +32,7 @@ window.quickSaleConfirm = function () {
             due: 0,
 
             mode: "CASH",
-            type: "CASH"
+            type: "SALE"
         })
     })
         .then(res => res.json())
