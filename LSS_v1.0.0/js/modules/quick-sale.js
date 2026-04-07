@@ -20,7 +20,7 @@ window.quickSaleConfirm = function () {
         method: "POST",
         body: JSON.stringify({
             key: SECRET_KEY,
-            action: "confirmBill",
+            action: "QuickSale",
             shopId: getShopId(),
 
             customerId: "",
