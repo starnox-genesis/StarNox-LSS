@@ -58,11 +58,11 @@ function updateKhataUI(data) {
     let dueColor = "";
 
     if (totalDue < 0) {
-        dueText = "₹ " + Math.abs(totalDue).toLocaleString("en-IN") + " Advance";
+        dueText = "₹ " + Math.abs(totalDue).toLocaleString("en-IN") + " ";
         dueColor = "green";
     } 
     else if (totalDue > 0) {
-        dueText = "₹ " + totalDue.toLocaleString("en-IN") + " Due";
+        dueText = "₹ " + totalDue.toLocaleString("en-IN") + " ";
         dueColor = "red";
     } 
     else {
