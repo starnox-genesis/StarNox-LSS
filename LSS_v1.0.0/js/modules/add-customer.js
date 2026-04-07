@@ -89,7 +89,7 @@ window.saveCustomer = function () {
 
     const payload = {
         key: SECRET_KEY,
-        action: "confirmBill",
+        action: "newCustomer",
         shopId: getShopId(),
         name: name,
         mobile: mobile,
